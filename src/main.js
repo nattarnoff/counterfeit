@@ -70,8 +70,8 @@ const componentCatalog = [
     demo: `
       <div class="cf-section-heading">
         <p class="cf-section-heading__eyebrow">Example section</p>
-        <h4 class="cf-section-heading__title" id="demo-section-heading">Portable heading block</h4>
-        <p class="cf-section-heading__description">Use this pattern to introduce content with a stable document outline.</p>
+        <p class="cf-component-card__title" id="demo-section-heading">Portable heading block</p>
+        <p class="cf-section-heading__description cf-showcase-copy">Use this pattern to introduce content with a stable document outline.</p>
       </div>`,
   },
   {
@@ -83,10 +83,10 @@ const componentCatalog = [
     js: 'No JavaScript required.',
     usage: '<article class="cf-callout cf-callout--orange">...</article>',
     demo: `
-      <article class="cf-callout cf-callout--orange">
-        <h4 class="cf-callout__title"><span class="cf-badge cf-badge--orange">Heads up</span></h4>
-        <div class="cf-callout__body"><p>Callouts help people scan the page for important notes.</p></div>
-      </article>`,
+      <div class="cf-callout cf-callout--orange">
+        <p class="cf-callout__title"><span class="cf-badge cf-badge--orange">Heads up</span></p>
+        <div class="cf-callout__body"><p class="cf-showcase-copy">Callouts help people scan the page for important notes.</p></div>
+      </div>`,
   },
   {
     layer: 'Molecule',
@@ -99,7 +99,7 @@ const componentCatalog = [
     demo: `
       <article class="cf-component-card">
         <p class="cf-component-card__layer">Molecule</p>
-        <h4 class="cf-component-card__title">ComponentCard</h4>
+        <p class="cf-component-card__title">ComponentCard</p>
         <p class="cf-component-card__description">This card presents structured metadata for the docs catalog.</p>
       </article>`,
   },
@@ -124,15 +124,11 @@ const componentCatalog = [
     commands: 'Tab moves between links. Enter activates the focused link.',
     aria: 'Apply aria-label to distinguish the navigation landmark when there are multiple nav regions.',
     js: 'No JavaScript required.',
-    usage: '<nav class="cf-nav" aria-label="Primary"><ul class="cf-nav__list">...</ul></nav>',
+    usage: '<div class="cf-nav"><ul class="cf-nav__list"><li><a href="#badge-component">Badge</a></li></ul></div>',
     demo: `
-      <nav class="cf-nav cf-demo-nav" aria-label="Component demo navigation">
-        <ul class="cf-nav__list">
-          <li><a href="#badge-component">Badge</a></li>
-          <li><a href="#button-component">Button</a></li>
-          <li><a href="#newsletter-component">Newsletter</a></li>
-        </ul>
-      </nav>`,
+      <div class="cf-nav cf-demo-nav">
+        <ul class="cf-nav__list"><li><a href="#badge-component">Badge</a></li><li><a href="#button-component">Button</a></li><li><a href="#newsletterdemo-component">Newsletter</a></li></ul>
+      </div>`,
   },
   {
     layer: 'Organism',
@@ -141,17 +137,17 @@ const componentCatalog = [
     commands: 'Tab moves through any links or buttons included in the hero.',
     aria: 'Name the section with aria-labelledby when the hero acts as a landmarked section.',
     js: 'No JavaScript required beyond any child control behaviors.',
-    usage: '<section class="cf-hero" aria-labelledby="hero-title">...</section>',
+    usage: '<div class="cf-hero"><h1>Hero title</h1><p>Summary</p></div>',
     demo: `
-      <section class="cf-demo-hero" aria-labelledby="demo-hero-title">
+      <div class="cf-demo-hero">
         <p><span class="cf-badge cf-badge--yellow">Featured</span></p>
-        <h4 class="cf-hero__title cf-demo-hero__title" id="demo-hero-title">Hero content introduces a page or release clearly.</h4>
+        <p class="cf-hero__title cf-demo-hero__title" id="demo-hero-title">Hero content introduces a page or release clearly.</p>
         <p class="cf-hero__summary cf-demo-hero__summary">Pair a direct headline with supporting body copy and clear actions.</p>
         <div class="cf-hero__actions">
           <a class="cf-button cf-button--primary" href="#install">Primary link</a>
           <button class="cf-button cf-button--secondary" type="button" data-demo-button="hero">Hero button</button>
         </div>
-      </section>`,
+      </div>`,
   },
   {
     layer: 'Organism',
@@ -160,14 +156,14 @@ const componentCatalog = [
     commands: 'Tab moves through the form. Enter submits. Standard input editing keys apply.',
     aria: 'Use aria-describedby for hints and status text, plus aria-live="polite" for submission feedback.',
     js: 'form.addEventListener("submit", handleSubmit);\nstatus.textContent = `Demo subscription captured for ${email}.`;',
-    usage: '<form class="cf-newsletter__form" data-demo-form aria-label="Newsletter demo form">...</form>',
+    usage: '<form class="cf-newsletter__form" aria-describedby="status-id">...</form>',
     demo: `
-      <section class="cf-newsletter" aria-labelledby="newsletter-demo-heading">
+      <div class="cf-newsletter">
         <div class="cf-newsletter__copy">
-          <h4 class="cf-newsletter__title" id="newsletter-demo-heading">Newsletter form demo</h4>
-          <p class="cf-newsletter__description">This demo shows the full HTML, JS behavior, keyboard support, and ARIA references working together.</p>
+          <h3 class="cf-newsletter__title" id="newsletter-demo-heading">Newsletter form demo</h3>
+          <p class="cf-newsletter__description cf-showcase-copy">This demo shows the full HTML, JS behavior, keyboard support, and ARIA references working together.</p>
         </div>
-        <form class="cf-newsletter__form" data-demo-form aria-label="Newsletter demo form">
+        <form class="cf-newsletter__form" data-demo-form>
           <div class="cf-newsletter__fields">
             <label class="cf-field" for="email">
               <span class="cf-field__label">Email address</span>
@@ -178,7 +174,7 @@ const componentCatalog = [
           </div>
           <p class="cf-form-status" id="form-status" aria-live="polite"></p>
         </form>
-      </section>`,
+      </div>`,
   },
 ];
 
@@ -192,7 +188,7 @@ const componentRows = componentCatalog
           <div class="cf-showcase-card__header">
             <div>
               <p class="cf-component-card__layer">${layer}</p>
-              <h3 class="cf-component-card__title">${name}</h3>
+              <h2 class="cf-component-card__title">${name}</h2>
             </div>
             <p class="cf-component-card__description">${description}</p>
           </div>
