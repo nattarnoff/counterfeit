@@ -36,7 +36,7 @@ th { text-align: left; }
 .cf-skip-link:focus { top: var(--cf-space-md); }
 .cf-page__main { width: min(calc(100% - 2rem), var(--cf-max-width)); margin: 0 auto; padding-bottom: var(--cf-space-2xl); }
 .cf-site-header { border-bottom: 1px solid var(--cf-color-border); background: rgba(5, 5, 5, 0.96); position: sticky; top: 0; backdrop-filter: blur(12px); }
-.cf-site-header__inner, .cf-hero__actions, .cf-newsletter__fields, .cf-nav__list, .cf-grid { display: flex; gap: var(--cf-space-md); flex-wrap: wrap; }
+.cf-site-header__inner, .cf-hero__actions, .cf-newsletter__fields, .cf-nav__list, .cf-grid, .cf-demo-badges, .cf-demo-actions { display: flex; gap: var(--cf-space-md); flex-wrap: wrap; }
 .cf-site-header__inner { align-items: center; justify-content: space-between; padding: var(--cf-space-md) 0; }
 .cf-nav__list { list-style: none; margin: 0; padding: 0; }
 .cf-nav a { text-decoration-thickness: 0.08em; text-underline-offset: 0.2em; }
@@ -55,9 +55,9 @@ th { text-align: left; }
 .cf-section { padding-top: var(--cf-space-2xl); }
 .cf-section-heading { display: grid; gap: var(--cf-space-sm); margin-bottom: var(--cf-space-lg); }
 .cf-section-heading__eyebrow, .cf-component-card__layer { margin: 0; color: var(--cf-color-orange); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
-.cf-grid--three-up > *, .cf-grid--two-up > * { flex: 1 1 16rem; }
-.cf-callout, .cf-component-card, .cf-newsletter, .cf-code-block, .cf-token-table { border: 1px solid var(--cf-color-border); border-radius: var(--cf-radius-lg); background: var(--cf-color-surface); }
-.cf-callout, .cf-component-card, .cf-newsletter, .cf-code-block { padding: var(--cf-space-lg); }
+.cf-grid--three-up > *, .cf-grid--two-up > *, .cf-showcase-grid > * { flex: 1 1 16rem; }
+.cf-callout, .cf-component-card, .cf-newsletter, .cf-code-block, .cf-token-table, .cf-showcase-card { border: 1px solid var(--cf-color-border); border-radius: var(--cf-radius-lg); background: var(--cf-color-surface); }
+.cf-callout, .cf-component-card, .cf-newsletter, .cf-code-block, .cf-showcase-card { padding: var(--cf-space-lg); }
 .cf-callout__title, .cf-callout__body p, .cf-list, .cf-component-card__description { margin: 0; }
 .cf-callout--red { border-color: rgba(255, 77, 79, 0.4); }
 .cf-callout--orange { border-color: rgba(255, 140, 66, 0.4); }
@@ -76,6 +76,33 @@ th { text-align: left; }
 .cf-logo__frame { width: 2.75rem; height: 2.75rem; border: 2px solid var(--cf-color-text); display: inline-flex; align-items: center; justify-content: center; }
 .cf-logo__slash { width: 0.25rem; height: 2rem; background: linear-gradient(180deg, var(--cf-color-red), var(--cf-color-orange), var(--cf-color-yellow)); transform: rotate(35deg); }
 .cf-list { padding-left: 1.25rem; }
+.cf-showcase-grid { display: grid; gap: var(--cf-space-lg); }
+.cf-showcase-card { display: grid; gap: var(--cf-space-lg); }
+.cf-showcase-card__header { display: grid; gap: var(--cf-space-sm); }
+.cf-showcase-card__demo-surface { background: #ffffff; color: #050505; border: 1px solid #050505; border-radius: var(--cf-radius-md); padding: var(--cf-space-lg); }
+.cf-showcase-card__demo-surface a { color: #050505; }
+.cf-showcase-card__demo-surface .cf-button--primary { background: #050505; color: #ffffff; }
+.cf-showcase-card__demo-surface .cf-button--secondary { color: #050505; border-color: #050505; }
+.cf-showcase-card__demo-surface .cf-field__control { background: #ffffff; color: #050505; border-color: #050505; }
+.cf-showcase-card__demo-surface .cf-newsletter,
+.cf-showcase-card__demo-surface .cf-callout,
+.cf-showcase-card__demo-surface .cf-component-card,
+.cf-showcase-card__demo-surface .cf-demo-hero { background: #ffffff; color: #050505; border-color: #050505; }
+.cf-showcase-card__demo-surface .cf-logo__frame { border-color: #050505; }
+.cf-showcase-card__demo-surface .cf-form-status,
+.cf-showcase-card__demo-surface .cf-field__hint,
+.cf-showcase-card__demo-surface .cf-newsletter__description,
+.cf-showcase-card__demo-surface .cf-hero__summary,
+.cf-showcase-card__demo-surface .cf-component-card__description { color: #303030; }
+.cf-showcase-card__meta { display: grid; gap: var(--cf-space-md); margin: 0; }
+.cf-showcase-card__meta div { display: grid; gap: var(--cf-space-xs); }
+.cf-showcase-card__meta dt { font-weight: 700; }
+.cf-showcase-card__meta dd { margin: 0; }
+.cf-showcase-card__meta code { white-space: pre-wrap; }
+.cf-demo-nav a { color: #050505; }
+.cf-demo-hero { border: 1px solid #050505; border-radius: var(--cf-radius-lg); padding: var(--cf-space-lg); display: grid; gap: var(--cf-space-md); }
+.cf-demo-hero__title { font-size: clamp(1.75rem, 4vw, 2.5rem); max-width: 18ch; }
+.cf-demo-hero__summary { max-width: 60ch; }
 @media (max-width: 720px) {
   .cf-token-table, .cf-token-table thead, .cf-token-table tbody, .cf-token-table__row, .cf-token-table th, .cf-token-table td { display: block; }
   .cf-token-table thead { position: absolute; left: -9999px; }
