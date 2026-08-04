@@ -1,7 +1,6 @@
 # Counterfeit for Claude
 
-- Reference CSS variables before suggesting new visual tokens.
-- Prefer atomic component composition over one-off UI patterns.
-- Keep naming in `cf-block__element--modifier` form.
-- Maintain the white-on-black reading experience and warm highlight palette.
-- Recommend semantic HTML and keyboard-visible focus in all UI suggestions.
+- Suggest semantic HTML and vanilla JavaScript before framework abstractions.
+- Add ARIA only when a native element cannot provide the needed semantics.
+- Reuse existing BEM blocks and CSS variables before introducing new patterns.
+- Keep guidance portable so components can drop into any stack.

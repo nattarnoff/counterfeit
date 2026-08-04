@@ -1,6 +1,6 @@
 # Counterfeit
 
-Counterfeit is an accessibility-first design system and documentation site built for GitHub Pages. It uses Atomic Design principles, BEM naming conventions, CSS custom properties, and a white-on-black interface with red, orange, and yellow highlights.
+Counterfeit is an accessibility-first design system and documentation site built with semantic HTML, CSS custom properties, and vanilla JavaScript. It uses Atomic Design principles, BEM naming conventions, and a white-on-black interface with red, orange, and yellow highlights.
 
 ## Install
 
@@ -31,19 +31,16 @@ npm run test:a11y
 
 ## System structure
 
-- `src/components/atoms`: primitives
-- `src/components/molecules`: composed blocks
-- `src/components/organisms`: larger page sections
-- `src/components/templates`: page templates using the system itself
-- `src/data/tokens.ts`: CSS variable reference data
+- `src/main.js`: semantic site template and progressive enhancement
+- `src/data/tokens.js`: CSS variable reference data
 - `src/styles/index.css`: theme tokens and BEM class styling
 - `src/content/ai`: AI guidance markdown files
 - `.github/workflows`: CI, accessibility, and GitHub Pages deployment
 
-## Documentation coverage
+## Authoring rules
 
-- Installation and local development
-- CSS variable reference
-- Atomic Design component overview
-- AI guidance for Figma, Claude, and Copilot
-- Logo direction and theme usage
+- Use semantic HTML first.
+- Add ARIA only when native HTML cannot express the interaction.
+- Keep JavaScript portable and framework-agnostic.
+- Use `cf-block__element--modifier` naming for reusable components.
+- Ensure components can be copied into any system without React or other framework dependencies.
