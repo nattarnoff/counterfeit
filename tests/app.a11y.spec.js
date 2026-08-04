@@ -5,10 +5,12 @@ test('homepage renders semantic documentation', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('header[role="banner"]')).toBeVisible();
   await expect(page.getByRole('main')).toBeVisible();
-  await expect(page.getByRole('navigation', { name: 'Primary' })).toBeVisible();
+  await expect(page.getByRole('banner').getByRole('navigation', { name: 'Primary' })).toBeVisible();
   await expect(page.getByRole('heading', { level: 1, name: /semantic, portable design system/i })).toBeVisible();
   await expect(page.getByRole('table')).toBeVisible();
-  await expect(page.locator('[data-demo-form]')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: /every shipped component is displayed/i })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'NewsletterDemo' })).toBeVisible();
+  await expect(page.locator('[data-demo-form]').first()).toBeVisible();
 });
 
 test('homepage has no accessibility violations', async ({ page }) => {
