@@ -6,10 +6,554 @@
     <meta name="theme-color" content="#050505" />
     <meta name="description" content="Counterfeit is an accessibility-first semantic design system with portable HTML, CSS, and vanilla JavaScript components." />
     <title>Counterfeit Design System</title>
-    <script type="module" crossorigin src="/counterfeit/assets/index-BOOq9qDb.js"></script>
+    <script type="module" crossorigin src="/counterfeit/assets/index-B32lufAZ.js"></script>
     <link rel="stylesheet" crossorigin href="/counterfeit/assets/index-zIhdEZmw.css">
   </head>
   <body>
-    <div id="root"></div>
+  <a class="cf-skip-link" href="#main-content">Skip to content</a>
+  <div class="cf-page">
+    <header class="cf-site-header" role="banner">
+      <div class="cf-page__main cf-site-header__inner">
+        <a class="cf-logo" href="#top" aria-label="Counterfeit home">
+          <span class="cf-logo__frame" aria-hidden="true"><span class="cf-logo__slash"></span></span>
+          <span class="cf-logo__wordmark">Counterfeit</span>
+        </a>
+        <nav class="cf-nav" aria-label="Primary">
+          <ul class="cf-nav__list">
+            <li><a href="#install">Install</a></li>
+            <li><a href="#tokens">Tokens</a></li>
+            <li><a href="#components">Components</a></li>
+            <li><a href="#logo">Logo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="cf-hero" id="top" aria-labelledby="hero-title">
+      <div class="cf-page__main">
+        <div class="cf-hero__content">
+          <p><span class="cf-badge cf-badge--red">Accessibility-first system</span></p>
+          <h1 class="cf-hero__title" id="hero-title">A semantic, portable design system built white-on-black for readable, inclusive interfaces.</h1>
+          <p class="cf-hero__summary">Counterfeit uses semantic HTML, accessible CSS, and vanilla JavaScript so every component can drop into any stack without framework lock-in.</p>
+          <div class="cf-hero__actions">
+            <a class="cf-button cf-button--primary" href="#install">Install Counterfeit</a>
+            <a class="cf-button cf-button--secondary" href="#components">Browse components</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main class="cf-page__main" id="main-content">
+      <section class="cf-section" id="overview" aria-labelledby="overview-title">
+        <div class="cf-section-heading">
+          <p class="cf-section-heading__eyebrow">System principles</p>
+          <h2 class="cf-section-heading__title" id="overview-title">Counterfeit follows Atomic Design, BEM, and inclusive defaults.</h2>
+          <p class="cf-section-heading__description">Every public-facing primitive uses semantic HTML, visible focus, white-on-black readability, and ARIA only where native semantics are insufficient.</p>
+        </div>
+        <div class="cf-grid cf-grid--three-up">
+          <article class="cf-callout cf-callout--red"><h3 class="cf-callout__title"><span class="cf-badge cf-badge--red">Install</span></h3><div class="cf-callout__body"><p>Install dependencies with npm install, then start the local docs site with npm run dev.</p></div></article>
+          <article class="cf-callout cf-callout--orange"><h3 class="cf-callout__title"><span class="cf-badge cf-badge--orange">Run</span></h3><div class="cf-callout__body"><p>Use npm run build for production output and npm run preview to verify the GitHub Pages build locally.</p></div></article>
+          <article class="cf-callout cf-callout--yellow"><h3 class="cf-callout__title"><span class="cf-badge cf-badge--yellow">Test</span></h3><div class="cf-callout__body"><p>Run npm run test, npm run lint, and npm run test:a11y to keep semantic behavior and accessibility covered.</p></div></article>
+        </div>
+      </section>
+      <section class="cf-section" id="install" aria-labelledby="install-title"><div class="cf-section-heading"><p class="cf-section-heading__eyebrow">Install and run</p><h2 class="cf-section-heading__title" id="install-title">Ship locally first, publish through GitHub Pages second.</h2><p class="cf-section-heading__description">The docs site is the reference implementation for portable HTML, CSS, and JavaScript components.</p></div><div class="cf-code-block"><pre><code>npm install
+npm run dev
+npm run build
+npm run preview</code></pre></div></section>
+      <section class="cf-section" id="tokens" aria-labelledby="tokens-title"><div class="cf-section-heading"><p class="cf-section-heading__eyebrow">CSS variables</p><h2 class="cf-section-heading__title" id="tokens-title">Design tokens stay documented, inspectable, and portable.</h2><p class="cf-section-heading__description">Use the variables below as the contract for theming, spacing, typography, and focus treatment across implementations.</p></div><div class="cf-table-wrap"><table class="cf-token-table"><caption class="cf-visually-hidden">CSS variable reference table</caption><thead><tr class="cf-token-table__row"><th scope="col">Variable</th><th scope="col">Value</th><th scope="col">Purpose</th></tr></thead><tbody>      <tr class="cf-token-table__row">
+        <th scope="row">--cf-color-bg</th>
+        <td><code>#050505</code></td>
+        <td>Primary page background.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-color-surface</th>
+        <td><code>#111111</code></td>
+        <td>Elevated panels and cards.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-color-surface-strong</th>
+        <td><code>#171717</code></td>
+        <td>Form controls and stronger surfaces.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-color-text</th>
+        <td><code>#f5f5f5</code></td>
+        <td>Primary readable text.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-color-muted</th>
+        <td><code>#c9c9c9</code></td>
+        <td>Supporting text and labels.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-color-border</th>
+        <td><code>#2e2e2e</code></td>
+        <td>Subtle dividers and field borders.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-color-red</th>
+        <td><code>#ff4d4f</code></td>
+        <td>Urgent accents and alerts.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-color-orange</th>
+        <td><code>#ff8c42</code></td>
+        <td>Warm highlight and callouts.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-color-yellow</th>
+        <td><code>#ffd84d</code></td>
+        <td>Attention states and badges.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-space-xs</th>
+        <td><code>0.25rem</code></td>
+        <td>Tight spacing.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-space-sm</th>
+        <td><code>0.5rem</code></td>
+        <td>Small spacing.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-space-md</th>
+        <td><code>1rem</code></td>
+        <td>Base spacing.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-space-lg</th>
+        <td><code>1.5rem</code></td>
+        <td>Large spacing.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-space-xl</th>
+        <td><code>2.5rem</code></td>
+        <td>Section spacing.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-space-2xl</th>
+        <td><code>4rem</code></td>
+        <td>Large section spacing.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-radius-sm</th>
+        <td><code>0.25rem</code></td>
+        <td>Small radius.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-radius-md</th>
+        <td><code>0.5rem</code></td>
+        <td>Default radius.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-radius-lg</th>
+        <td><code>1rem</code></td>
+        <td>Large radius.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-shadow-focus</th>
+        <td><code>0 0 0 3px rgba(255, 216, 77, 0.45)</code></td>
+        <td>Accessible focus ring.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-font-body</th>
+        <td><code>'Inter', 'Segoe UI', sans-serif</code></td>
+        <td>Body font stack.</td>
+      </tr>
+      <tr class="cf-token-table__row">
+        <th scope="row">--cf-font-display</th>
+        <td><code>'Space Grotesk', 'Arial Black', sans-serif</code></td>
+        <td>Display font stack.</td>
+      </tr></tbody></table></div></section>
+      <section class="cf-section" id="components" aria-labelledby="components-title"><div class="cf-section-heading"><p class="cf-section-heading__eyebrow">Component library</p><h2 class="cf-section-heading__title" id="components-title">Every shipped component is displayed with appearance, behavior, usage, keyboard support, and ARIA notes.</h2><p class="cf-section-heading__description">Demo surfaces use a white background with black text, borders, and the key commands and ARIA guidance people need to implement each pattern.</p></div><div class="cf-showcase-grid">
+        <article class="cf-showcase-card" id="badge-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Atom</p>
+              <h2 class="cf-component-card__title">Badge</h2>
+            </div>
+            <p class="cf-component-card__description">Short status text for labels, categories, and states.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <div class="cf-demo-badges" aria-label="Badge examples">
+        <span class="cf-badge cf-badge--red">Critical</span>
+        <span class="cf-badge cf-badge--orange">Preview</span>
+        <span class="cf-badge cf-badge--yellow">New</span>
+      </div>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><span class="cf-badge cf-badge--red">Beta</span></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>No JavaScript required.</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Not keyboard interactive.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Use plain text in a semantic container. No ARIA needed. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="cf-showcase-card" id="button-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Atom</p>
+              <h2 class="cf-component-card__title">Button</h2>
+            </div>
+            <p class="cf-component-card__description">Primary and secondary actions using the native button element.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <div class="cf-demo-actions">
+        <button class="cf-button cf-button--primary" type="button" data-demo-button="primary">Primary action</button>
+        <button class="cf-button cf-button--secondary" type="button" data-demo-button="secondary">Secondary action</button>
+      </div>
+      <p class="cf-form-status" data-button-status aria-live="polite">Choose an action to preview button behavior.</p>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><button class="cf-button cf-button--primary" type="button">Save</button></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>const button = document.querySelector("button");
+button.addEventListener("click", handleAction);</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Tab moves focus. Enter and Space activate the button.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Use the native <button>. Add aria-pressed only for toggle buttons. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="cf-showcase-card" id="input-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Atom</p>
+              <h2 class="cf-component-card__title">Input</h2>
+            </div>
+            <p class="cf-component-card__description">Single-line text entry with a visible label and hint text.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <label class="cf-field" for="demo-name">
+        <span class="cf-field__label">Display name</span>
+        <span class="cf-field__hint" id="demo-name-hint">Use aria-describedby to announce supportive instructions.</span>
+        <input class="cf-field__control" id="demo-name" name="demo-name" type="text" aria-describedby="demo-name-hint demo-name-status" />
+      </label>
+      <p class="cf-form-status" id="demo-name-status" aria-live="polite">Start typing to see the input event update.</p>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><label class="cf-field"><span class="cf-field__label">Name</span><input class="cf-field__control" type="text" /></label></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>const input = document.querySelector("#demo-name");
+input.addEventListener("input", updatePreview);</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Tab moves focus. Standard text editing keys follow browser defaults.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Connect hint text with aria-describedby when extra guidance is present. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="cf-showcase-card" id="sectionheading-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Atom</p>
+              <h2 class="cf-component-card__title">SectionHeading</h2>
+            </div>
+            <p class="cf-component-card__description">Eyebrow, heading, and supporting text for section intros.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <div class="cf-section-heading">
+        <p class="cf-section-heading__eyebrow">Example section</p>
+        <p class="cf-component-card__title" id="demo-section-heading">Portable heading block</p>
+        <p class="cf-section-heading__description cf-showcase-copy">Use this pattern to introduce content with a stable document outline.</p>
+      </div>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><section aria-labelledby="example-title">...</section></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>No JavaScript required.</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Not keyboard interactive.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Reference the heading with aria-labelledby on the parent section when useful. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="cf-showcase-card" id="calloutcard-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Molecule</p>
+              <h2 class="cf-component-card__title">CalloutCard</h2>
+            </div>
+            <p class="cf-component-card__description">Highlighted content block for key notes, alerts, or guidance.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <div class="cf-callout cf-callout--orange">
+        <p class="cf-callout__title"><span class="cf-badge cf-badge--orange">Heads up</span></p>
+        <div class="cf-callout__body"><p class="cf-showcase-copy">Callouts help people scan the page for important notes.</p></div>
+      </div>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><article class="cf-callout cf-callout--orange">...</article></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>No JavaScript required.</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Not keyboard interactive unless you place interactive children inside it.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Use semantic headings and body text. Add role="note" only if needed by context. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="cf-showcase-card" id="componentcard-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Molecule</p>
+              <h2 class="cf-component-card__title">ComponentCard</h2>
+            </div>
+            <p class="cf-component-card__description">Catalog card that groups a component name, layer, and summary.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <article class="cf-component-card">
+        <p class="cf-component-card__layer">Molecule</p>
+        <p class="cf-component-card__title">ComponentCard</p>
+        <p class="cf-component-card__description">This card presents structured metadata for the docs catalog.</p>
+      </article>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><article class="cf-component-card">...</article></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>No JavaScript required.</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Not keyboard interactive unless linked or buttonized intentionally.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Keep the heading semantic. No extra ARIA is needed for static cards. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="cf-showcase-card" id="logomark-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Molecule</p>
+              <h2 class="cf-component-card__title">LogoMark</h2>
+            </div>
+            <p class="cf-component-card__description">Brand link with a framed icon and wordmark.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <a class="cf-logo" href="#components" aria-label="Jump to components showcase">
+        <span class="cf-logo__frame" aria-hidden="true"><span class="cf-logo__slash"></span></span>
+        <span class="cf-logo__wordmark">Counterfeit</span>
+      </a>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><a class="cf-logo" href="#top" aria-label="Counterfeit home">...</a></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>No JavaScript required.</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Tab moves focus. Enter activates the link.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Use aria-label when the visible logo treatment does not fully convey the destination. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="cf-showcase-card" id="navigation-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Organism</p>
+              <h2 class="cf-component-card__title">Navigation</h2>
+            </div>
+            <p class="cf-component-card__description">Primary site navigation made from a nav landmark and link list.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <div class="cf-nav cf-demo-nav">
+        <ul class="cf-nav__list"><li><a href="#badge-component">Badge</a></li><li><a href="#button-component">Button</a></li><li><a href="#newsletterdemo-component">Newsletter</a></li></ul>
+      </div>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><div class="cf-nav"><ul class="cf-nav__list"><li><a href="#badge-component">Badge</a></li></ul></div></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>No JavaScript required.</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Tab moves between links. Enter activates the focused link.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Apply aria-label to distinguish the navigation landmark when there are multiple nav regions. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="cf-showcase-card" id="hero-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Organism</p>
+              <h2 class="cf-component-card__title">Hero</h2>
+            </div>
+            <p class="cf-component-card__description">Top-level page introduction with message and related actions.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <div class="cf-demo-hero">
+        <p><span class="cf-badge cf-badge--yellow">Featured</span></p>
+        <p class="cf-hero__title cf-demo-hero__title" id="demo-hero-title">Hero content introduces a page or release clearly.</p>
+        <p class="cf-hero__summary cf-demo-hero__summary">Pair a direct headline with supporting body copy and clear actions.</p>
+        <div class="cf-hero__actions">
+          <a class="cf-button cf-button--primary" href="#install">Primary link</a>
+          <button class="cf-button cf-button--secondary" type="button" data-demo-button="hero">Hero button</button>
+        </div>
+      </div>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><div class="cf-hero"><h1>Hero title</h1><p>Summary</p></div></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>No JavaScript required beyond any child control behaviors.</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Tab moves through any links or buttons included in the hero.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Name the section with aria-labelledby when the hero acts as a landmarked section. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article>
+        <article class="cf-showcase-card" id="newsletterdemo-component">
+          <div class="cf-showcase-card__header">
+            <div>
+              <p class="cf-component-card__layer">Organism</p>
+              <h2 class="cf-component-card__title">NewsletterDemo</h2>
+            </div>
+            <p class="cf-component-card__description">Progressively enhanced form demo with validation feedback and live status text.</p>
+          </div>
+          <div class="cf-showcase-card__demo">
+            <div class="cf-showcase-card__demo-surface">
+              
+      <div class="cf-newsletter">
+        <div class="cf-newsletter__copy">
+          <h3 class="cf-newsletter__title" id="newsletter-demo-heading">Newsletter form demo</h3>
+          <p class="cf-newsletter__description cf-showcase-copy">This demo shows the full HTML, JS behavior, keyboard support, and ARIA references working together.</p>
+        </div>
+        <form class="cf-newsletter__form" data-demo-form>
+          <div class="cf-newsletter__fields">
+            <label class="cf-field" for="email">
+              <span class="cf-field__label">Email address</span>
+              <span class="cf-field__hint" id="email-hint">Required for updates and release notes</span>
+              <input class="cf-field__control" id="email" name="email" type="email" autocomplete="email" aria-describedby="email-hint form-status" required />
+            </label>
+            <button class="cf-button cf-button--primary" type="submit">Join updates</button>
+          </div>
+          <p class="cf-form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+            </div>
+          </div>
+          <dl class="cf-showcase-card__meta">
+            <div>
+              <dt>Usage</dt>
+              <dd><pre><code><form class="cf-newsletter__form" aria-describedby="status-id">...</form></code></pre></dd>
+            </div>
+            <div>
+              <dt>JavaScript</dt>
+              <dd><pre><code>form.addEventListener("submit", handleSubmit);
+status.textContent = `Demo subscription captured for ${email}.`;</code></pre></dd>
+            </div>
+            <div>
+              <dt>Keyboard</dt>
+              <dd>Tab moves through the form. Enter submits. Standard input editing keys apply.</dd>
+            </div>
+            <div>
+              <dt>ARIA</dt>
+              <dd>Use aria-describedby for hints and status text, plus aria-live="polite" for submission feedback. Reference: W3C APG and native HTML semantics.</dd>
+            </div>
+          </dl>
+        </article></div></section>
+      <section class="cf-section" id="guidance" aria-labelledby="guidance-title"><div class="cf-section-heading"><p class="cf-section-heading__eyebrow">Portable usage</p><h2 class="cf-section-heading__title" id="guidance-title">Components are intended to drop into any system.</h2><p class="cf-section-heading__description">Prefer native elements first, add ARIA only when native semantics cannot express the interaction, and keep JS as progressive enhancement.</p></div><ul class="cf-list"><li>Use native buttons, links, forms, lists, headings, and tables before adding roles.</li><li>Keep behavior separate from markup so components can be copied into any build system.</li><li>Reference the W3C APG for keyboard patterns when a component introduces a custom interaction.</li></ul></section>
+      <section class="cf-section" id="logo" aria-labelledby="logo-title"><div class="cf-section-heading"><p class="cf-section-heading__eyebrow">Logo direction</p><h2 class="cf-section-heading__title" id="logo-title">A logo should feel rebellious, legible, and reproducible.</h2><p class="cf-section-heading__description">Start with a stark frame, a diagonal disruption mark, and a heavy wordmark.</p></div><ul class="cf-list"><li>Broken frame: a white square outline interrupted by a red slash.</li><li>Stamp mark: monospaced COUNTERFEIT wordmark with yellow registration bars.</li><li>Signal flare: black field, white C glyph, orange interference bands.</li></ul></section>
+    </main>
+  </div>
+
   </body>
 </html>
