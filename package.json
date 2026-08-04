@@ -1,10 +1,16 @@
 {
   "name": "counterfeit",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Accessibility-first design system and docs site",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:a11y": "playwright test",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -13,7 +19,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
@@ -40,5 +46,6 @@
     "vite-plugin-checker": "^0.14.5",
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.1.10"
-  }
+  },
+  "private": true
 }
