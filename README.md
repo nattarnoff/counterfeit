@@ -31,7 +31,8 @@ npm run test:a11y
 
 ## System structure
 
-- `src/main.js`: semantic site template, full component showcase catalog, and progressive enhancement
+- `index.html`: static semantic site template and full component showcase catalog
+- `src/main.js`: progressive enhancement for interactive demos
 - `src/data/tokens.js`: CSS variable reference data
 - `src/styles/index.css`: theme tokens, BEM class styling, and white-background demo surfaces
 - `src/content/ai`: AI guidance markdown files
