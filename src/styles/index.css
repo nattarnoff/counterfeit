@@ -135,3 +135,56 @@ th { text-align: left; }
 .cf-showcase-card__demo-surface .cf-callout__body p { color: #050505 !important; }
 
 .cf-showcase-card__demo-surface .cf-showcase-copy { color: #050505 !important; }
+
+.cf-component-index {
+  margin-bottom: var(--cf-space-lg);
+  padding: var(--cf-space-lg);
+  border: 1px solid var(--cf-color-border);
+  border-radius: var(--cf-radius-lg);
+  background: var(--cf-color-surface);
+}
+
+.cf-component-detail {
+  display: grid;
+  gap: var(--cf-space-lg);
+}
+
+.cf-tabset {
+  display: grid;
+  gap: var(--cf-space-md);
+}
+
+.cf-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cf-space-sm);
+}
+
+.cf-tab {
+  border: 1px solid var(--cf-color-border);
+  border-radius: var(--cf-radius-md);
+  background: transparent;
+  color: var(--cf-color-text);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+.cf-tab[aria-selected="true"] {
+  background: var(--cf-color-text);
+  color: var(--cf-color-bg);
+}
+
+.cf-tab-panel[hidden] {
+  display: none;
+}
+
+.cf-showcase-copy {
+  margin: 0;
+  color: var(--cf-color-muted);
+}
+
+.cf-site-footer {
+  border-top: 1px solid var(--cf-color-border);
+  margin-top: var(--cf-space-2xl);
+  padding: var(--cf-space-lg) 0;
+}
