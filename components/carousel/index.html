@@ -1,0 +1,77 @@
+---
+layout: default
+title: Carousel
+nav_key: components
+description: Carousel rotates through a small set of related panels with explicit previous and next controls.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Navigation</p>
+  <h1 class="cf-section-heading__title">Carousel</h1>
+  <p class="cf-section-heading__description">Carousel rotates through a small set of related panels with explicit previous and next controls.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Show a limited set of featured messages or slides.</li>
+        <li>Always provide manual controls and avoid surprise auto-rotation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <section class="cf-carousel" data-carousel aria-label="Carousel example">
+  <p class="cf-form-status" data-carousel-status aria-live="polite">Slide 1 of 3</p>
+  <div class="cf-carousel__slide" data-carousel-slide>Slide 1: Keep motion user-controlled.</div>
+  <div class="cf-carousel__controls">
+    <button class="cf-button cf-button--secondary" type="button" data-carousel-previous>Previous</button>
+    <button class="cf-button cf-button--secondary" type="button" data-carousel-next>Next</button>
+  </div>
+</section>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;section class="cf-carousel" data-carousel aria-label="Carousel example"&gt;
+  &lt;p class="cf-form-status" data-carousel-status aria-live="polite"&gt;Slide 1 of 3&lt;/p&gt;
+  &lt;div class="cf-carousel__slide" data-carousel-slide&gt;Slide 1: Keep motion user-controlled.&lt;/div&gt;
+  &lt;div class="cf-carousel__controls"&gt;
+    &lt;button class="cf-button cf-button--secondary" type="button" data-carousel-previous&gt;Previous&lt;/button&gt;
+    &lt;button class="cf-button cf-button--secondary" type="button" data-carousel-next&gt;Next&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-carousel-next]').addEventListener('click', showNextSlide);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Provide a label for the carousel region.</li>
+        <li>Keep controls as buttons and expose the current slide in text.</li>
+        <li>Do not hide essential information behind motion alone.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab reaches previous and next buttons.</li>
+        <li>Enter and Space activate the controls.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

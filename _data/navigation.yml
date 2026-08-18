@@ -1,0 +1,21 @@
+- key: home
+  label: "Home"
+  url: "/"
+- key: components
+  label: "Components"
+  url: "/components/"
+- key: best-practices
+  label: "Best Practices"
+  url: "/best-practices/"
+- key: building-a-program
+  label: "Building a Program"
+  url: "/building-a-program/"
+- key: contact
+  label: "Contact"
+  url: "/contact/"
+- key: contribute
+  label: "Contribute"
+  url: "/contribute/"
+- key: donate
+  label: "Donate"
+  url: "/donate/"

@@ -1,0 +1,83 @@
+---
+layout: default
+title: Navs and tabs
+nav_key: components
+description: Navs and tabs organize related destinations or panels without overwhelming the page.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Navigation</p>
+  <h1 class="cf-section-heading__title">Navs and tabs</h1>
+  <p class="cf-section-heading__description">Navs and tabs organize related destinations or panels without overwhelming the page.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use nav links for page-to-page movement and tabs for same-page panel switches.</li>
+        <li>Keep tab labels short and parallel.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-tabset" data-tabs>
+  <div class="cf-tablist" role="tablist" aria-label="Implementation views">
+    <button class="cf-tab" type="button" role="tab" id="tab-guidance" aria-selected="true" aria-controls="panel-guidance">Guidance</button>
+    <button class="cf-tab" type="button" role="tab" id="tab-demo" aria-selected="false" aria-controls="panel-demo" tabindex="-1">Demo</button>
+    <button class="cf-tab" type="button" role="tab" id="tab-warnings" aria-selected="false" aria-controls="panel-warnings" tabindex="-1">Warnings</button>
+  </div>
+  <div class="cf-tab-panel" role="tabpanel" id="panel-guidance" aria-labelledby="tab-guidance">Nav links move between pages; tabs switch related content on the same page.</div>
+  <div class="cf-tab-panel" role="tabpanel" id="panel-demo" aria-labelledby="tab-demo" hidden>Use the arrow keys to move between these tabs.</div>
+  <div class="cf-tab-panel" role="tabpanel" id="panel-warnings" aria-labelledby="tab-warnings" hidden>Do not use tabs when the interaction should be a page-to-page navigation system.</div>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-tabset" data-tabs&gt;
+  &lt;div class="cf-tablist" role="tablist" aria-label="Implementation views"&gt;
+    &lt;button class="cf-tab" type="button" role="tab" id="tab-guidance" aria-selected="true" aria-controls="panel-guidance"&gt;Guidance&lt;/button&gt;
+    &lt;button class="cf-tab" type="button" role="tab" id="tab-demo" aria-selected="false" aria-controls="panel-demo" tabindex="-1"&gt;Demo&lt;/button&gt;
+    &lt;button class="cf-tab" type="button" role="tab" id="tab-warnings" aria-selected="false" aria-controls="panel-warnings" tabindex="-1"&gt;Warnings&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="cf-tab-panel" role="tabpanel" id="panel-guidance" aria-labelledby="tab-guidance"&gt;Nav links move between pages; tabs switch related content on the same page.&lt;/div&gt;
+  &lt;div class="cf-tab-panel" role="tabpanel" id="panel-demo" aria-labelledby="tab-demo" hidden&gt;Use the arrow keys to move between these tabs.&lt;/div&gt;
+  &lt;div class="cf-tab-panel" role="tabpanel" id="panel-warnings" aria-labelledby="tab-warnings" hidden&gt;Do not use tabs when the interaction should be a page-to-page navigation system.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelectorAll('[role="tab"]').forEach((tab) =&gt; {
+  tab.addEventListener('keydown', handleTabKeys);
+});</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>For tabs, use tablist, tab, and tabpanel roles only when staying on the same page.</li>
+        <li>Set aria-selected and aria-controls on each tab.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab reaches the active tab.</li>
+        <li>Arrow keys move between tabs.</li>
+        <li>Home and End jump to the first and last tab.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+---
+layout: default
+title: Scrollspy
+nav_key: components
+description: Scrollspy highlights which in-page section is currently active in a companion navigation list.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Navigation</p>
+  <h1 class="cf-section-heading__title">Scrollspy</h1>
+  <p class="cf-section-heading__description">Scrollspy highlights which in-page section is currently active in a companion navigation list.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Orient users in long single-topic documents.</li>
+        <li>Keep the section list concise and predictable.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-scrollspy-demo">
+  <nav aria-label="Section list">
+    <ol class="cf-scrollspy-nav">
+      <li><button class="cf-page-link" type="button" data-scrollspy-link aria-current="true">Intro</button></li>
+      <li><button class="cf-page-link" type="button" data-scrollspy-link>Usage</button></li>
+      <li><button class="cf-page-link" type="button" data-scrollspy-link>Warnings</button></li>
+    </ol>
+  </nav>
+  <p class="cf-form-status" data-scrollspy-status aria-live="polite">Active section: Intro.</p>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-scrollspy-demo"&gt;
+  &lt;nav aria-label="Section list"&gt;
+    &lt;ol class="cf-scrollspy-nav"&gt;
+      &lt;li&gt;&lt;button class="cf-page-link" type="button" data-scrollspy-link aria-current="true"&gt;Intro&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="cf-page-link" type="button" data-scrollspy-link&gt;Usage&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="cf-page-link" type="button" data-scrollspy-link&gt;Warnings&lt;/button&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/nav&gt;
+  &lt;p class="cf-form-status" data-scrollspy-status aria-live="polite"&gt;Active section: Intro.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelectorAll('[data-scrollspy-link]').forEach((button) =&gt; {
+  button.addEventListener('click', setActiveSection);
+});</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use standard anchor links inside a nav.</li>
+        <li>Set aria-current="true" or aria-current="location" on the active link when appropriate.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab moves through section links.</li>
+        <li>Enter activates the selected anchor.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

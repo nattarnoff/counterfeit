@@ -1,0 +1,80 @@
+---
+layout: default
+title: Navbar
+nav_key: components
+description: Navbar provides consistent wayfinding across major site areas.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Navigation</p>
+  <h1 class="cf-section-heading__title">Navbar</h1>
+  <p class="cf-section-heading__description">Navbar provides consistent wayfinding across major site areas.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Expose global navigation and brand context.</li>
+        <li>Collapse secondary links only when space demands it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-nav-surface">
+  <button class="cf-button cf-button--secondary" type="button" data-disclosure-toggle aria-expanded="false" aria-controls="nav-panel">Toggle navigation</button>
+  <nav class="cf-demo-panel" id="nav-panel" aria-label="Example site navigation" hidden>
+    <ul class="cf-nav__list">
+      <li><a href="#">Overview</a></li>
+      <li><a href="#">Patterns</a></li>
+      <li><a href="#">Support</a></li>
+    </ul>
+  </nav>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-nav-surface"&gt;
+  &lt;button class="cf-button cf-button--secondary" type="button" data-disclosure-toggle aria-expanded="false" aria-controls="nav-panel"&gt;Toggle navigation&lt;/button&gt;
+  &lt;nav class="cf-demo-panel" id="nav-panel" aria-label="Example site navigation" hidden&gt;
+    &lt;ul class="cf-nav__list"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Overview&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Patterns&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Support&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-disclosure-toggle]').addEventListener('click', toggleDisclosure);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Wrap the links in nav with an accessible name.</li>
+        <li>Use a button with aria-expanded for any mobile toggle.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab moves through the toggle and each link.</li>
+        <li>Enter and Space open the collapsed set from the toggle.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

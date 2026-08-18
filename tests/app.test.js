@@ -3,7 +3,12 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { designTokens } from '../src/data/tokens.js';
 
-const html = readFileSync(path.resolve(process.cwd(), 'index.html'), 'utf8');
+const repoRoot = process.cwd();
+const homePage = readFileSync(path.resolve(repoRoot, 'index.html'), 'utf8');
+const componentsIndex = readFileSync(path.resolve(repoRoot, 'components/index.html'), 'utf8');
+const buttonPage = readFileSync(path.resolve(repoRoot, 'components/buttons/index.html'), 'utf8');
+const componentData = readFileSync(path.resolve(repoRoot, '_data/components.yml'), 'utf8');
+const config = readFileSync(path.resolve(repoRoot, '_config.yml'), 'utf8');
 
 describe('design tokens', () => {
   it('includes highlight colors and focus treatment', () => {
@@ -16,20 +21,23 @@ describe('design tokens', () => {
 });
 
 describe('site architecture', () => {
-  it('includes the requested primary sections', () => {
-    expect(html).toContain('href="#home"');
-    expect(html).toContain('href="#components"');
-    expect(html).toContain('href="#best-practices"');
-    expect(html).toContain('href="#building-a-program"');
-    expect(html).toContain('href="#contact"');
-    expect(html).toContain('href="#contribute"');
-    expect(html).toContain('href="#donate"');
+  it('configures a multipage Jekyll site with the repo baseurl', () => {
+    expect(config).toContain('baseurl: "/counterfeit"');
+    expect(config).toContain('permalink: pretty');
   });
 
-  it('documents components with tabs, aria guidance, and keyboard expectations', () => {
-    expect(html.match(/role="tablist"/g)).toHaveLength(4);
-    expect(html).toContain('Required ARIA');
-    expect(html).toMatch(/keyboard expectations/i);
-    expect(html).toContain('Warnings');
+  it('uses page-to-page primary navigation for the requested top-level sections', () => {
+    expect(homePage).toContain("{{ '/components/' | relative_url }}");
+    expect(homePage).toContain("{{ '/best-practices/' | relative_url }}");
+    expect(componentData).toContain('slug: accordion');
+  });
+
+  it('documents an individual component page with implementation, aria, and keystrokes sections', () => {
+    expect(componentsIndex).toContain('Visit a dedicated page for every documented component and primitive');
+    expect(buttonPage).toContain('Working demo');
+    expect(buttonPage).toContain('HTML implementation');
+    expect(buttonPage).toContain('JavaScript implementation');
+    expect(buttonPage).toContain('Required ARIA');
+    expect(buttonPage).toContain('Keystrokes expected');
   });
 });

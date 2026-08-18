@@ -1,0 +1,21 @@
+---
+layout: default
+title: Components
+nav_key: components
+description: Index of component reference pages for Counterfeit.
+---
+<section class="cf-section">
+  <div class="cf-section-heading">
+    <p class="cf-section-heading__eyebrow">Component index</p>
+    <h1 class="cf-section-heading__title">Visit a dedicated page for every documented component and primitive.</h1>
+    <p class="cf-section-heading__description">Each page includes a description, common uses, HTML implementation, JavaScript implementation, required ARIA, expected keystrokes, and a working demo in vanilla JavaScript.</p>
+  </div>
+  <div class="cf-card-list">
+    {% for component in site.data.components %}
+      <article class="cf-component-card">
+        <p class="cf-component-card__layer">{{ component.group }}</p>
+        <h2 class="cf-component-card__title"><a href="{{ '/components/' | append: component.slug | append: '/' | relative_url }}">{{ component.name }}</a></h2>
+      </article>
+    {% endfor %}
+  </div>
+</section>

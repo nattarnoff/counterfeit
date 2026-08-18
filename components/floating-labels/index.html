@@ -1,0 +1,72 @@
+---
+layout: default
+title: Floating labels
+nav_key: components
+description: Floating labels keep the field label visible while saving vertical space around the control.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Forms</p>
+  <h1 class="cf-section-heading__title">Floating labels</h1>
+  <p class="cf-section-heading__description">Floating labels keep the field label visible while saving vertical space around the control.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use only when the label remains readable in all states.</li>
+        <li>Keep hints and errors separate from the label.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <label class="cf-field" for="demo-name">
+  <span class="cf-field__label">Display name</span>
+  <span class="cf-field__hint" id="demo-name-hint">Use aria-describedby only for hint and status text.</span>
+  <input class="cf-field__control" id="demo-name" name="demo-name" type="text" aria-describedby="demo-name-hint demo-name-status" />
+</label>
+<p class="cf-form-status" id="demo-name-status" aria-live="polite">Start typing to see the input event update.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;label class="cf-field" for="demo-name"&gt;
+  &lt;span class="cf-field__label"&gt;Display name&lt;/span&gt;
+  &lt;span class="cf-field__hint" id="demo-name-hint"&gt;Use aria-describedby only for hint and status text.&lt;/span&gt;
+  &lt;input class="cf-field__control" id="demo-name" name="demo-name" type="text" aria-describedby="demo-name-hint demo-name-status" /&gt;
+&lt;/label&gt;
+&lt;p class="cf-form-status" id="demo-name-status" aria-live="polite"&gt;Start typing to see the input event update.&lt;/p&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('#demo-name').addEventListener('input', updatePreviewText);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Retain a real label element bound to the input.</li>
+        <li>Do not replace the label with placeholder text alone.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab moves to the input.</li>
+        <li>Text entry follows native input behavior.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>
