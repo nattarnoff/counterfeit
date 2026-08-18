@@ -45,6 +45,7 @@ const closeNearestControlledRegion = (button) => {
   const dismissible = button.closest('[data-dismissible]');
   if (dismissible instanceof HTMLElement) {
     dismissible.hidden = true;
+    return;
   }
 
   const controlledRoot = button.closest('[id]');
