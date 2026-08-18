@@ -456,3 +456,35 @@ th { text-align: left; }
     transform: rotate(360deg);
   }
 }
+
+
+.cf-floating-field {
+  position: relative;
+  display: grid;
+}
+
+.cf-floating-field__control {
+  border: 1px solid #050505;
+  border-radius: var(--cf-radius-md);
+  padding: 1.5rem 1rem 0.625rem;
+  background: #ffffff;
+  color: #050505;
+}
+
+.cf-floating-field__label {
+  position: absolute;
+  left: 1rem;
+  top: 0.95rem;
+  background: #ffffff;
+  padding: 0 0.25rem;
+  color: #505050;
+  transition: transform 0.2s ease, top 0.2s ease, font-size 0.2s ease;
+}
+
+.cf-floating-field:focus-within .cf-floating-field__label,
+.cf-floating-field__control:not(:placeholder-shown) + .cf-floating-field__label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 0.875rem;
+  color: #050505;
+}

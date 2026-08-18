@@ -6,21 +6,18 @@ Counterfeit is an accessibility-first documentation site built as a multipage st
 
 ```bash
 npm install
-export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"
 bundle install --path vendor/bundle
 ```
 
 ## Run locally
 
 ```bash
-export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"
 bundle exec jekyll serve
 ```
 
 ## Build
 
 ```bash
-export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"
 bundle exec jekyll build
 ```
 

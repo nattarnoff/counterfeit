@@ -3,6 +3,8 @@ const demoForm = document.querySelector('[data-demo-form]');
 const formStatus = document.querySelector('#form-status');
 const demoNameInput = document.querySelector('#demo-name');
 const demoNameStatus = document.querySelector('#demo-name-status');
+const floatingInput = document.querySelector('[data-floating-input]');
+const floatingStatus = document.querySelector('[data-floating-status]');
 const buttonStatus = document.querySelector('[data-button-status]');
 const demoButtons = document.querySelectorAll('[data-demo-button]');
 
@@ -40,23 +42,22 @@ const toggleControlledRegion = (trigger, forceState) => {
 };
 
 const closeNearestControlledRegion = (button) => {
-  const controlledRoot = button.closest('[id]');
-  if (controlledRoot instanceof HTMLElement) {
-    controlledRoot.hidden = true;
-  }
-
-  const trigger = controlledRoot?.id
-    ? document.querySelector(`[aria-controls="${controlledRoot.id}"]`)
-    : null;
-
-  if (trigger instanceof HTMLButtonElement) {
-    trigger.setAttribute('aria-expanded', 'false');
-    trigger.focus();
-  }
-
   const dismissible = button.closest('[data-dismissible]');
   if (dismissible instanceof HTMLElement) {
     dismissible.hidden = true;
+  }
+
+  const controlledRoot = button.closest('[id]');
+  if (!(controlledRoot instanceof HTMLElement)) {
+    return;
+  }
+
+  controlledRoot.hidden = true;
+
+  const trigger = document.querySelector(`[aria-controls="${controlledRoot.id}"]`);
+  if (trigger instanceof HTMLButtonElement) {
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.focus();
   }
 };
 
@@ -133,6 +134,14 @@ if (demoNameInput instanceof HTMLInputElement && demoNameStatus) {
     demoNameStatus.textContent = demoNameInput.value
       ? `Preview value: ${demoNameInput.value}`
       : 'Start typing to see the input event update.';
+  });
+}
+
+if (floatingInput instanceof HTMLInputElement && floatingStatus) {
+  floatingInput.addEventListener('input', () => {
+    floatingStatus.textContent = floatingInput.value
+      ? `Floating label active for: ${floatingInput.value}`
+      : 'Start typing to keep the label floated.';
   });
 }
 

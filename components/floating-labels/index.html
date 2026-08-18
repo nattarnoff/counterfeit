@@ -23,29 +23,27 @@ description: Floating labels keep the field label visible while saving vertical 
     <section class="cf-callout">
       <h2 class="cf-callout__title">Working demo</h2>
       <div class="cf-showcase-card__demo-surface">
-        <label class="cf-field" for="demo-name">
-  <span class="cf-field__label">Display name</span>
-  <span class="cf-field__hint" id="demo-name-hint">Use aria-describedby only for hint and status text.</span>
-  <input class="cf-field__control" id="demo-name" name="demo-name" type="text" aria-describedby="demo-name-hint demo-name-status" />
-</label>
-<p class="cf-form-status" id="demo-name-status" aria-live="polite">Start typing to see the input event update.</p>
+        <div class="cf-floating-field">
+  <input class="cf-floating-field__control" id="floating-name" name="floating-name" type="text" placeholder=" " data-floating-input aria-describedby="floating-status" />
+  <label class="cf-floating-field__label" for="floating-name">Display name</label>
+</div>
+<p class="cf-form-status" id="floating-status" data-floating-status aria-live="polite">Start typing to keep the label floated.</p>
       </div>
     </section>
   </div>
 
   <section class="cf-code-block">
     <h2 class="cf-callout__title">HTML implementation</h2>
-    <pre><code>&lt;label class="cf-field" for="demo-name"&gt;
-  &lt;span class="cf-field__label"&gt;Display name&lt;/span&gt;
-  &lt;span class="cf-field__hint" id="demo-name-hint"&gt;Use aria-describedby only for hint and status text.&lt;/span&gt;
-  &lt;input class="cf-field__control" id="demo-name" name="demo-name" type="text" aria-describedby="demo-name-hint demo-name-status" /&gt;
-&lt;/label&gt;
-&lt;p class="cf-form-status" id="demo-name-status" aria-live="polite"&gt;Start typing to see the input event update.&lt;/p&gt;</code></pre>
+    <pre><code>&lt;div class="cf-floating-field"&gt;
+  &lt;input class="cf-floating-field__control" id="floating-name" name="floating-name" type="text" placeholder=" " data-floating-input aria-describedby="floating-status" /&gt;
+  &lt;label class="cf-floating-field__label" for="floating-name"&gt;Display name&lt;/label&gt;
+&lt;/div&gt;
+&lt;p class="cf-form-status" id="floating-status" data-floating-status aria-live="polite"&gt;Start typing to keep the label floated.&lt;/p&gt;</code></pre>
   </section>
 
   <section class="cf-code-block">
     <h2 class="cf-callout__title">JavaScript implementation</h2>
-    <pre><code>document.querySelector('#demo-name').addEventListener('input', updatePreviewText);</code></pre>
+    <pre><code>document.querySelector('[data-floating-input]').addEventListener('input', updateFloatingPreview);</code></pre>
   </section>
 
   <div class="cf-detail-grid">
