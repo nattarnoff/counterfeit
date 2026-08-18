@@ -1,0 +1,76 @@
+---
+layout: default
+title: Accordion
+nav_key: components
+description: Accordion reveals one related section of content at a time without forcing a page change.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Disclosure</p>
+  <h1 class="cf-section-heading__title">Accordion</h1>
+  <p class="cf-section-heading__description">Accordion reveals one related section of content at a time without forcing a page change.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Condense FAQs, setup steps, and supporting guidance.</li>
+        <li>Keep long pages scannable while preserving semantic headings.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <section class="cf-demo-stack" aria-label="Accordion example">
+  <h3 class="cf-demo-heading">Implementation preview</h3>
+  <button class="cf-button cf-button--secondary" type="button" data-disclosure-toggle aria-expanded="false" aria-controls="demo-panel">Project setup checklist</button>
+  <div class="cf-demo-panel" id="demo-panel" hidden>
+    <p>Document component intent, note required keyboard behavior, and test with a screen reader before release.</p>
+  </div>
+</section>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;section class="cf-demo-stack" aria-label="Accordion example"&gt;
+  &lt;h3 class="cf-demo-heading"&gt;Implementation preview&lt;/h3&gt;
+  &lt;button class="cf-button cf-button--secondary" type="button" data-disclosure-toggle aria-expanded="false" aria-controls="demo-panel"&gt;Project setup checklist&lt;/button&gt;
+  &lt;div class="cf-demo-panel" id="demo-panel" hidden&gt;
+    &lt;p&gt;Document component intent, note required keyboard behavior, and test with a screen reader before release.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>const trigger = document.querySelector('[data-disclosure-toggle]');
+trigger.addEventListener('click', toggleDisclosure);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use a button inside a heading for each trigger.</li>
+        <li>Set aria-expanded on the trigger and aria-controls to reference the panel.</li>
+        <li>Hide collapsed panels with the hidden attribute.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab reaches each accordion trigger.</li>
+        <li>Enter and Space toggle the current section.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

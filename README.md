@@ -1,24 +1,24 @@
 # Counterfeit
 
-Counterfeit is an accessibility-first design system and documentation site built with semantic HTML, CSS custom properties, and vanilla JavaScript. It uses Atomic Design principles, BEM naming conventions, and a white-on-black interface with red, orange, and yellow highlights.
+Counterfeit is an accessibility-first documentation site built as a multipage static Jekyll site with semantic HTML, CSS custom properties, and vanilla JavaScript demos.
 
 ## Install
 
 ```bash
 npm install
+bundle install --path vendor/bundle
 ```
 
 ## Run locally
 
 ```bash
-npm run dev
+bundle exec jekyll serve
 ```
 
 ## Build
 
 ```bash
-npm run build
-npm run preview
+bundle exec jekyll build
 ```
 
 ## Validate
@@ -26,27 +26,19 @@ npm run preview
 ```bash
 npm run lint
 npm run test
+npm run build
 npm run test:a11y
 ```
 
 ## System structure
 
-- `index.html`: static semantic site template and full component showcase catalog
-- `src/main.js`: progressive enhancement for interactive demos
-- `src/data/tokens.js`: CSS variable reference data
-- `src/styles/index.css`: theme tokens, BEM class styling, and white-background demo surfaces
-- `src/content/ai`: AI guidance markdown files
-- `.github/workflows`: CI, accessibility, and GitHub Pages deployment
-
-## Component showcase
-
-The docs homepage now displays every shipped component with:
-
-- a live visual demo
-- HTML usage snippets
-- JavaScript behavior snippets
-- keyboard command summaries
-- ARIA guidance referencing the W3C APG and native semantics
+- `_config.yml`: Jekyll site configuration and pretty permalink setup
+- `_layouts/default.html`: shared site chrome and asset loading
+- `_data/navigation.yml`: primary navigation page links
+- `_data/components.yml`: component index data used by the component catalog
+- `components/*/index.html`: one page per documented component or primitive
+- `src/main.js`: progressive enhancement for demos and disclosure patterns
+- `src/styles/index.css`: theme tokens, layout styling, and demo presentation
 
 ## Authoring rules
 
@@ -54,4 +46,4 @@ The docs homepage now displays every shipped component with:
 - Add ARIA only when native HTML cannot express the interaction.
 - Keep JavaScript portable and framework-agnostic.
 - Use `cf-block__element--modifier` naming for reusable components.
-- Ensure components can be copied into any system without React or other framework dependencies.
+- Keep primary navigation as page-to-page links, not in-page section jumps.

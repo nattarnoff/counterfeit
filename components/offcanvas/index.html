@@ -1,0 +1,81 @@
+---
+layout: default
+title: Offcanvas
+nav_key: components
+description: Offcanvas slides in a supplemental panel while preserving the underlying page context.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Overlay</p>
+  <h1 class="cf-section-heading__title">Offcanvas</h1>
+  <p class="cf-section-heading__description">Offcanvas slides in a supplemental panel while preserving the underlying page context.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Present filters, menus, or secondary details without a full modal.</li>
+        <li>Keep focus management explicit.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-stack">
+  <button class="cf-button cf-button--secondary" type="button" data-popup-toggle aria-expanded="false" aria-controls="offcanvas-panel">Open side panel</button>
+  <aside class="cf-offcanvas" id="offcanvas-panel" hidden aria-labelledby="offcanvas-title">
+    <div class="cf-offcanvas__header">
+      <h3 id="offcanvas-title">Filter results</h3>
+      <button class="cf-icon-button" type="button" data-demo-dismiss aria-label="Close side panel">×</button>
+    </div>
+    <p>Side panels work best for supplemental tasks such as filters or navigation.</p>
+  </aside>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-stack"&gt;
+  &lt;button class="cf-button cf-button--secondary" type="button" data-popup-toggle aria-expanded="false" aria-controls="offcanvas-panel"&gt;Open side panel&lt;/button&gt;
+  &lt;aside class="cf-offcanvas" id="offcanvas-panel" hidden aria-labelledby="offcanvas-title"&gt;
+    &lt;div class="cf-offcanvas__header"&gt;
+      &lt;h3 id="offcanvas-title"&gt;Filter results&lt;/h3&gt;
+      &lt;button class="cf-icon-button" type="button" data-demo-dismiss aria-label="Close side panel"&gt;×&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Side panels work best for supplemental tasks such as filters or navigation.&lt;/p&gt;
+  &lt;/aside&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-popup-toggle]').addEventListener('click', toggleSidePanel);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Treat the panel like a dialog when it traps attention.</li>
+        <li>Use aria-expanded on the trigger and an accessible label for the panel.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Enter or Space opens the panel.</li>
+        <li>Escape closes it.</li>
+        <li>Tab moves through the focusable content inside the panel.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

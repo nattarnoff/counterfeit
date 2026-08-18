@@ -5,10 +5,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "deploy:pages": "gh-pages -d dist --repo https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git",
-    "preview": "vite preview",
+    "dev": "bundle exec jekyll serve --host 127.0.0.1 --port 4000",
+    "build": "bundle exec jekyll build",
+    "preview": "bundle exec jekyll serve --host 127.0.0.1 --port 4173",
     "lint": "eslint .",
     "test": "vitest run",
     "test:a11y": "playwright test"

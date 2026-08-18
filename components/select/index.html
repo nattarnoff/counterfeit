@@ -1,0 +1,84 @@
+---
+layout: default
+title: Select
+nav_key: components
+description: Select fields capture one choice from a fixed set of options.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Forms</p>
+  <h1 class="cf-section-heading__title">Select</h1>
+  <p class="cf-section-heading__description">Select fields capture one choice from a fixed set of options.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use when the option list is short enough to browse.</li>
+        <li>Prefer radio groups for a few always-visible options.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-stack">
+  <label class="cf-field" for="select-demo">
+    <span class="cf-field__label">Support level</span>
+    <select class="cf-field__control" id="select-demo" data-select-input>
+      <option>Choose one</option>
+      <option>Baseline</option>
+      <option>Enhanced</option>
+      <option>Advanced</option>
+    </select>
+  </label>
+  <p class="cf-form-status" data-select-status aria-live="polite">Choose an option to preview the selected value.</p>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-stack"&gt;
+  &lt;label class="cf-field" for="select-demo"&gt;
+    &lt;span class="cf-field__label"&gt;Support level&lt;/span&gt;
+    &lt;select class="cf-field__control" id="select-demo" data-select-input&gt;
+      &lt;option&gt;Choose one&lt;/option&gt;
+      &lt;option&gt;Baseline&lt;/option&gt;
+      &lt;option&gt;Enhanced&lt;/option&gt;
+      &lt;option&gt;Advanced&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
+  &lt;p class="cf-form-status" data-select-status aria-live="polite"&gt;Choose an option to preview the selected value.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-select-input]').addEventListener('change', announceSelectedOption);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use the native select with a visible label.</li>
+        <li>Do not replace it with a custom widget unless the interaction is fully reproduced.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab reaches the select.</li>
+        <li>Arrow keys move through options once the control is focused.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

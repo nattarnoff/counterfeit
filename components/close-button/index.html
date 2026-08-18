@@ -1,0 +1,79 @@
+---
+layout: default
+title: Close button
+nav_key: components
+description: Close buttons dismiss temporary UI like alerts, dialogs, or banners.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Action</p>
+  <h1 class="cf-section-heading__title">Close button</h1>
+  <p class="cf-section-heading__description">Close buttons dismiss temporary UI like alerts, dialogs, or banners.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Close nonessential overlays or inline notices.</li>
+        <li>Provide a concise accessible name describing what will close.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-stack" data-dismissible>
+  <div class="cf-callout cf-callout--orange cf-inline-notice" role="alert">
+    <div>
+      <h3 class="cf-callout__title">Review reminder</h3>
+      <p class="cf-callout__body">This temporary message can be dismissed with the close button.</p>
+    </div>
+    <button class="cf-icon-button" type="button" data-demo-dismiss aria-label="Dismiss notice">×</button>
+  </div>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-stack" data-dismissible&gt;
+  &lt;div class="cf-callout cf-callout--orange cf-inline-notice" role="alert"&gt;
+    &lt;div&gt;
+      &lt;h3 class="cf-callout__title"&gt;Review reminder&lt;/h3&gt;
+      &lt;p class="cf-callout__body"&gt;This temporary message can be dismissed with the close button.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="cf-icon-button" type="button" data-demo-dismiss aria-label="Dismiss notice"&gt;×&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>const dismissButton = document.querySelector('[data-demo-dismiss]');
+dismissButton.addEventListener('click', dismissContainer);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use button with an explicit accessible name such as aria-label="Close alert".</li>
+        <li>Do not rely on the icon alone.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab moves focus to the close button.</li>
+        <li>Enter and Space activate it.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

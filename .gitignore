@@ -1,4 +1,9 @@
 node_modules
+_site
+vendor
+.bundle
+.jekyll-cache
+.sass-cache
 dist
 coverage
 playwright-report

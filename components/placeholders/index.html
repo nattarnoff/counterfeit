@@ -1,0 +1,70 @@
+---
+layout: default
+title: Placeholders
+nav_key: components
+description: Placeholders reserve space while real content is still loading or being prepared.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Feedback</p>
+  <h1 class="cf-section-heading__title">Placeholders</h1>
+  <p class="cf-section-heading__description">Placeholders reserve space while real content is still loading or being prepared.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Prevent layout shift while async content arrives.</li>
+        <li>Swap to actual content as soon as it is available.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-stack">
+  <div class="cf-placeholder" data-placeholder-content aria-hidden="true"></div>
+  <p class="cf-form-status" data-placeholder-status aria-live="polite">Content is still loading.</p>
+  <button class="cf-button cf-button--secondary" type="button" data-placeholder-toggle>Load content</button>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-stack"&gt;
+  &lt;div class="cf-placeholder" data-placeholder-content aria-hidden="true"&gt;&lt;/div&gt;
+  &lt;p class="cf-form-status" data-placeholder-status aria-live="polite"&gt;Content is still loading.&lt;/p&gt;
+  &lt;button class="cf-button cf-button--secondary" type="button" data-placeholder-toggle&gt;Load content&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-placeholder-toggle]').addEventListener('click', swapPlaceholder);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Do not expose decorative placeholders as meaningful content.</li>
+        <li>If loading state matters, announce it separately in text.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Placeholders are not keyboard interactive by themselves.</li>
+        <li>Any control that resolves the loading state must be keyboard accessible.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

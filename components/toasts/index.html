@@ -1,0 +1,74 @@
+---
+layout: default
+title: Toasts
+nav_key: components
+description: Toasts present brief, dismissible updates without fully interrupting the current task.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Feedback</p>
+  <h1 class="cf-section-heading__title">Toasts</h1>
+  <p class="cf-section-heading__description">Toasts present brief, dismissible updates without fully interrupting the current task.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Confirm lightweight actions like saving preferences.</li>
+        <li>Keep the message brief and easy to dismiss.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-stack">
+  <button class="cf-button cf-button--secondary" type="button" data-popup-toggle aria-expanded="false" aria-controls="toast-panel">Show toast</button>
+  <div class="cf-toast" id="toast-panel" hidden role="status">
+    <p>Preferences saved.</p>
+    <button class="cf-icon-button" type="button" data-demo-dismiss aria-label="Dismiss toast">×</button>
+  </div>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-stack"&gt;
+  &lt;button class="cf-button cf-button--secondary" type="button" data-popup-toggle aria-expanded="false" aria-controls="toast-panel"&gt;Show toast&lt;/button&gt;
+  &lt;div class="cf-toast" id="toast-panel" hidden role="status"&gt;
+    &lt;p&gt;Preferences saved.&lt;/p&gt;
+    &lt;button class="cf-icon-button" type="button" data-demo-dismiss aria-label="Dismiss toast"&gt;×&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-popup-toggle]').addEventListener('click', toggleToast);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use role="status" for non-urgent updates or role="alert" for urgent ones.</li>
+        <li>Allow the toast to remain visible long enough to be read.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>If the toast contains a button, Tab reaches it.</li>
+        <li>Enter and Space activate the close action.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

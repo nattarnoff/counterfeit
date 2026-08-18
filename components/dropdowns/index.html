@@ -1,0 +1,78 @@
+---
+layout: default
+title: Dropdowns
+nav_key: components
+description: Dropdowns reveal a short action or navigation list from a trigger button.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Navigation</p>
+  <h1 class="cf-section-heading__title">Dropdowns</h1>
+  <p class="cf-section-heading__description">Dropdowns reveal a short action or navigation list from a trigger button.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Expose secondary actions without crowding the default view.</li>
+        <li>Keep the list short and specific.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-stack cf-dropdown" data-popup-root>
+  <button class="cf-button cf-button--secondary" type="button" data-popup-toggle aria-expanded="false" aria-controls="dropdown-panel">Open actions</button>
+  <div class="cf-popup" id="dropdown-panel" hidden>
+    <a href="#">Review</a>
+    <a href="#">Publish</a>
+    <a href="#">Archive</a>
+  </div>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-stack cf-dropdown" data-popup-root&gt;
+  &lt;button class="cf-button cf-button--secondary" type="button" data-popup-toggle aria-expanded="false" aria-controls="dropdown-panel"&gt;Open actions&lt;/button&gt;
+  &lt;div class="cf-popup" id="dropdown-panel" hidden&gt;
+    &lt;a href="#"&gt;Review&lt;/a&gt;
+    &lt;a href="#"&gt;Publish&lt;/a&gt;
+    &lt;a href="#"&gt;Archive&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-popup-toggle]').addEventListener('click', togglePopup);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Keep the trigger as a button with aria-expanded.</li>
+        <li>Reference the popup container with aria-controls.</li>
+        <li>Avoid menu roles unless the full application menu pattern is required.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab moves to the trigger and then the revealed links.</li>
+        <li>Enter and Space open the dropdown from the trigger.</li>
+        <li>Escape closes the popup when focus is inside it.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

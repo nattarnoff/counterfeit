@@ -1,0 +1,69 @@
+---
+layout: default
+title: Popovers
+nav_key: components
+description: Popovers reveal extra contextual detail from an explicit trigger near the related control.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Overlay</p>
+  <h1 class="cf-section-heading__title">Popovers</h1>
+  <p class="cf-section-heading__description">Popovers reveal extra contextual detail from an explicit trigger near the related control.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Share optional supporting detail without redirecting the user.</li>
+        <li>Keep the content brief and dismissible.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-stack" data-popup-root>
+  <button class="cf-button cf-button--secondary" type="button" data-popup-toggle aria-expanded="false" aria-controls="popover-panel">Show popover</button>
+  <div class="cf-popup" id="popover-panel" hidden>Use popovers only for brief, optional context.</div>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-stack" data-popup-root&gt;
+  &lt;button class="cf-button cf-button--secondary" type="button" data-popup-toggle aria-expanded="false" aria-controls="popover-panel"&gt;Show popover&lt;/button&gt;
+  &lt;div class="cf-popup" id="popover-panel" hidden&gt;Use popovers only for brief, optional context.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-popup-toggle]').addEventListener('click', togglePopup);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use a button trigger with aria-expanded.</li>
+        <li>Associate the floating content with the trigger by id when appropriate.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab reaches the trigger and any content inside the popover.</li>
+        <li>Enter or Space opens it.</li>
+        <li>Escape closes it.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

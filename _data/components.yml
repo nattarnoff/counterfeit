@@ -1,0 +1,93 @@
+- slug: accordion
+  name: "Accordion"
+  group: "Disclosure"
+- slug: alerts
+  name: "Alerts"
+  group: "Status"
+- slug: badge
+  name: "Badge"
+  group: "Status"
+- slug: breadcrumb
+  name: "Breadcrumb"
+  group: "Navigation"
+- slug: buttons
+  name: "Buttons"
+  group: "Action"
+- slug: button-group
+  name: "Button group"
+  group: "Action"
+- slug: card
+  name: "Card"
+  group: "Container"
+- slug: carousel
+  name: "Carousel"
+  group: "Navigation"
+- slug: checks-and-radios
+  name: "Checks and radios"
+  group: "Forms"
+- slug: close-button
+  name: "Close button"
+  group: "Action"
+- slug: collapse
+  name: "Collapse"
+  group: "Disclosure"
+- slug: dropdowns
+  name: "Dropdowns"
+  group: "Navigation"
+- slug: floating-labels
+  name: "Floating labels"
+  group: "Forms"
+- slug: form-control
+  name: "Form control"
+  group: "Forms"
+- slug: input-group
+  name: "Input group"
+  group: "Forms"
+- slug: list-group
+  name: "List group"
+  group: "Navigation"
+- slug: modal
+  name: "Modal"
+  group: "Overlay"
+- slug: navbar
+  name: "Navbar"
+  group: "Navigation"
+- slug: navs-and-tabs
+  name: "Navs and tabs"
+  group: "Navigation"
+- slug: offcanvas
+  name: "Offcanvas"
+  group: "Overlay"
+- slug: pagination
+  name: "Pagination"
+  group: "Navigation"
+- slug: placeholders
+  name: "Placeholders"
+  group: "Feedback"
+- slug: popovers
+  name: "Popovers"
+  group: "Overlay"
+- slug: progress
+  name: "Progress"
+  group: "Feedback"
+- slug: range
+  name: "Range"
+  group: "Forms"
+- slug: scrollspy
+  name: "Scrollspy"
+  group: "Navigation"
+- slug: select
+  name: "Select"
+  group: "Forms"
+- slug: spinners
+  name: "Spinners"
+  group: "Feedback"
+- slug: toasts
+  name: "Toasts"
+  group: "Feedback"
+- slug: tooltips
+  name: "Tooltips"
+  group: "Overlay"
+- slug: validation
+  name: "Validation"
+  group: "Forms"

@@ -1,0 +1,82 @@
+---
+layout: default
+title: Input group
+nav_key: components
+description: Input groups combine a field with contextual text or an adjacent action.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Forms</p>
+  <h1 class="cf-section-heading__title">Input group</h1>
+  <p class="cf-section-heading__description">Input groups combine a field with contextual text or an adjacent action.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Prefix units, domains, or action buttons near the field.</li>
+        <li>Keep the extra context terse and programmatically associated.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <form class="cf-newsletter__form" data-demo-form>
+  <label class="cf-field" for="email">
+    <span class="cf-field__label">Project email</span>
+    <div class="cf-input-group">
+      <span class="cf-input-group__prefix">@</span>
+      <input class="cf-field__control" id="email" name="email" type="email" required />
+      <button class="cf-button cf-button--primary" type="submit">Subscribe</button>
+    </div>
+  </label>
+  <p class="cf-form-status" id="form-status" aria-live="polite">Enter an email address to preview the submission feedback.</p>
+</form>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;form class="cf-newsletter__form" data-demo-form&gt;
+  &lt;label class="cf-field" for="email"&gt;
+    &lt;span class="cf-field__label"&gt;Project email&lt;/span&gt;
+    &lt;div class="cf-input-group"&gt;
+      &lt;span class="cf-input-group__prefix"&gt;@&lt;/span&gt;
+      &lt;input class="cf-field__control" id="email" name="email" type="email" required /&gt;
+      &lt;button class="cf-button cf-button--primary" type="submit"&gt;Subscribe&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+  &lt;p class="cf-form-status" id="form-status" aria-live="polite"&gt;Enter an email address to preview the submission feedback.&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-demo-form]').addEventListener('submit', announceSubmission);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use visible labels even when add-ons are present.</li>
+        <li>If supporting text is needed, connect it with aria-describedby.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab moves through the text field and any appended button.</li>
+        <li>Inputs and buttons keep native keyboard behavior.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

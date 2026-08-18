@@ -1,0 +1,74 @@
+---
+layout: default
+title: Breadcrumb
+nav_key: components
+description: Breadcrumbs expose the current page location within a larger site hierarchy.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Navigation</p>
+  <h1 class="cf-section-heading__title">Breadcrumb</h1>
+  <p class="cf-section-heading__description">Breadcrumbs expose the current page location within a larger site hierarchy.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Support orientation in nested documentation.</li>
+        <li>Offer an alternate way back to higher-level sections.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <nav aria-label="Breadcrumb example">
+  <ol class="cf-breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Components</a></li>
+    <li aria-current="page">Current page</li>
+  </ol>
+</nav>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;nav aria-label="Breadcrumb example"&gt;
+  &lt;ol class="cf-breadcrumb"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Components&lt;/a&gt;&lt;/li&gt;
+    &lt;li aria-current="page"&gt;Current page&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>No JavaScript required for the breadcrumb itself.</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Wrap the list in a nav with an accessible name.</li>
+        <li>Mark the current page link or text with aria-current="page".</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab moves through each breadcrumb link.</li>
+        <li>Enter activates a link.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

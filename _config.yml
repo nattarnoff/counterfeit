@@ -1,0 +1,16 @@
+title: Counterfeit
+description: Accessibility-first documentation site for semantic components and governance guidance.
+baseurl: "/counterfeit"
+url: ""
+permalink: pretty
+markdown: kramdown
+exclude:
+  - node_modules
+  - vendor
+  - package-lock.json
+  - package.json
+  - vite.config.js
+  - vitest.config.js
+  - playwright.config.js
+  - tests
+  - eslint.config.js

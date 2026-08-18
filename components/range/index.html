@@ -1,0 +1,75 @@
+---
+layout: default
+title: Range
+nav_key: components
+description: Range inputs capture approximate numeric values across a bounded interval.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Forms</p>
+  <h1 class="cf-section-heading__title">Range</h1>
+  <p class="cf-section-heading__description">Range inputs capture approximate numeric values across a bounded interval.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Choose volume, percentage, or a relative intensity value.</li>
+        <li>Always present the current value in text.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-stack">
+  <label class="cf-field" for="range-demo">
+    <span class="cf-field__label">Contrast boost</span>
+    <input class="cf-field__control cf-range" id="range-demo" type="range" min="0" max="100" value="40" data-range-input />
+  </label>
+  <p class="cf-form-status" data-range-status aria-live="polite">Current value: 40.</p>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-stack"&gt;
+  &lt;label class="cf-field" for="range-demo"&gt;
+    &lt;span class="cf-field__label"&gt;Contrast boost&lt;/span&gt;
+    &lt;input class="cf-field__control cf-range" id="range-demo" type="range" min="0" max="100" value="40" data-range-input /&gt;
+  &lt;/label&gt;
+  &lt;p class="cf-form-status" data-range-status aria-live="polite"&gt;Current value: 40.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelector('[data-range-input]').addEventListener('input', announceRangeValue);</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use the native input type="range" with a visible label.</li>
+        <li>Expose the current value nearby for sighted users.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab reaches the slider.</li>
+        <li>Arrow keys adjust the current value.</li>
+        <li>Page Up, Page Down, Home, and End may also be supported by the browser.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+---
+layout: default
+title: Buttons
+nav_key: components
+description: Buttons trigger immediate actions with native button semantics and visible focus.
+---
+<section class="cf-section cf-component-detail">
+  <p class="cf-section-heading__eyebrow">Action</p>
+  <h1 class="cf-section-heading__title">Buttons</h1>
+  <p class="cf-section-heading__description">Buttons trigger immediate actions with native button semantics and visible focus.</p>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--yellow">
+      <h2 class="cf-callout__title">Common uses</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Submit forms, launch dialogs, and trigger immediate changes.</li>
+        <li>Use the clearest text possible for the action outcome.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout">
+      <h2 class="cf-callout__title">Working demo</h2>
+      <div class="cf-showcase-card__demo-surface">
+        <div class="cf-demo-actions">
+  <button class="cf-button cf-button--primary" type="button" data-demo-button="Save">Save</button>
+  <button class="cf-button cf-button--secondary" type="button" data-demo-button="Cancel">Cancel</button>
+</div>
+<p class="cf-form-status" data-button-status aria-live="polite">Choose an action to preview button behavior.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">HTML implementation</h2>
+    <pre><code>&lt;div class="cf-demo-actions"&gt;
+  &lt;button class="cf-button cf-button--primary" type="button" data-demo-button="Save"&gt;Save&lt;/button&gt;
+  &lt;button class="cf-button cf-button--secondary" type="button" data-demo-button="Cancel"&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;
+&lt;p class="cf-form-status" data-button-status aria-live="polite"&gt;Choose an action to preview button behavior.&lt;/p&gt;</code></pre>
+  </section>
+
+  <section class="cf-code-block">
+    <h2 class="cf-callout__title">JavaScript implementation</h2>
+    <pre><code>document.querySelectorAll('[data-demo-button]').forEach((button) =&gt; {
+  button.addEventListener('click', announceAction);
+});</code></pre>
+  </section>
+
+  <div class="cf-detail-grid">
+    <section class="cf-callout cf-callout--red">
+      <h2 class="cf-callout__title">Required ARIA</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Use the native button element.</li>
+        <li>Add aria-pressed only for toggle buttons that maintain state.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cf-callout cf-callout--orange">
+      <h2 class="cf-callout__title">Keystrokes expected</h2>
+      <div class="cf-callout__body">
+        <ul class="cf-list">
+        <li>Tab moves focus to the button.</li>
+        <li>Enter and Space activate the button.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>
